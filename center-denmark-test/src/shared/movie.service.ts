@@ -15,23 +15,16 @@ export class MovieService {
   //   { id: 3, title: 'Star Wars Episode IV: A new hope', director: 'George Lucas', year: 1977, rating: '8/10' }
   // ];
 
-  //movies$: Observable<Movie[]> | undefined;
-
   constructor(private http: HttpClient) {}
 
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.backendUrl);
   }
 
-  // getMovieById(id: number): Movie | undefined{
-  //   return this.movies.find(movie => movie.id === id);
-  // }
   getMovieById(id: string): Observable<Movie> {
     return this.http.get<Movie>(this.backendUrl+"/"+id);
   }
-
   createMovie(movie: Movie): Observable<Movie> {
-    console.log('test create:'+movie)
     return this.http.post<Movie>(this.backendUrl+"/add", movie);
     //movie.id = this.generateRandomId();
     // this.movies.push(movie);

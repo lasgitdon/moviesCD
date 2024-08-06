@@ -21,6 +21,7 @@ import { MovieToolbarComponent } from './movie-toolbar/movie-toolbar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MovieFooterComponent } from './movie-footer/movie-footer.component';
 import { MovieGraphComponent } from './movie-graph/movie-graph.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MovieGraphComponent } from './movie-graph/movie-graph.component';
     MatInputModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

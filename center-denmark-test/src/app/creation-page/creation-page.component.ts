@@ -10,7 +10,7 @@ import { MovieService } from 'src/shared/movie.service';
 })
 export class CreationPageComponent implements OnInit {
 
-  newMovie: Movie = { id: 0, title: '', director: '', year: 0, rating: '' };
+  newMovie: Movie = { id: '', title: '', director: '', year: 0, rating: '' };
 
   constructor(private router: Router, private movieService: MovieService) { }
 
@@ -18,8 +18,8 @@ export class CreationPageComponent implements OnInit {
   }
 
   createMovie(): void {
-    this.movieService.createMovie(this.newMovie);
-    this.router.navigate(['/overview']);
+    this.movieService.createMovie(this.newMovie)
+      .subscribe({complete: () => this.router.navigate(['/overview'])});
   }
 
   goToOverviewPage(): void {

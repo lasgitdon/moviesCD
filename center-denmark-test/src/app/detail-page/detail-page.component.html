@@ -5,7 +5,7 @@
   <p>The accuracy of the data in the graph is not guaranteed to be true</p>
 </div>
 
-<div *ngIf="!errorMessage && movie else noMovieFound">
+<div *ngIf="movie$ | async; let movie"><!-- *ngIf="!errorMessage && movie else noMovieFound">-->
   <div class="container-fluid">
   <div class="row">
     <div class="col-4">
